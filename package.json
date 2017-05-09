@@ -1,0 +1,25 @@
+{
+  "name": "ls-mongo-i",
+  "version": "1.0.0",
+  "description": "## Topics",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/taithethai/LS-Mongo-I.git"
+  },
+  "author": "taithethai",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/taithethai/LS-Mongo-I/issues"
+  },
+  "homepage": "https://github.com/taithethai/LS-Mongo-I#readme",
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "cors": "^2.8.3",
+    "express": "^4.15.2",
+    "mongoose": "^4.9.8"
+  }
+}
