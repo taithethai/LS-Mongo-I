@@ -2,7 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost:27017/mongodb-1');
+mongoose.connect('mongodb://localhost/mongodb-1');
 
 const User = require('./models/user');
 const app = express();
@@ -33,7 +33,21 @@ app.post('/users', (req, res) => {
   });
 });
 // * [GET] `/users/:id` This route will return the user with the matching `id` (`_id` on the db document) property.
+
+app.get('/users/:id', (req, res) => {
+  User.findById(req.params.id, (err, user) => {
+    if (err) return res.send(err);
+    res.send(user);
+  });
+});
 // * [DELETE] `/users/:id` This route should delete the specified user.
+
+app.delete('/users/:id', (req, res) => {
+  User.findById(req.params.id).remove((err, user) => {
+    if (err) return res.send(err);
+    res.send(user);
+  });
+});
 
 app.listen(5000, () => {
   console.log('Server listening on port 5000');
